@@ -1,5 +1,6 @@
 import { Box, Divider, Flex, Image, SimpleGrid, Text, useDisclosure } from "@chakra-ui/react";
 import { priceTagIcon } from "../../../assets/svgs/svg";
+import { useNavigate } from "react-router-dom";
 import CustomButton from "../../../components/CustomButton/customButton";
 import AuthNavBar from "../../../components/NavBar/AuthNavBar";
 import BrandLogo from "../../../assets/icons/logo192.png";
@@ -11,13 +12,19 @@ const nftData = [
   {
     name: "Tic Tac",
     image_url: "https://gametable.org/res/images/og/tabletop-tic-tac-toe-og-1200x1200.png",
-    desc: "Play-to-Earn mobile strategy game on SOLID protocol",
+    desc: "Play-to-Earn mobile strategy game on NFT Nexus protocol",
     price: 0.01
   }, {
     name: "Solid NFT",
-    desc: "This NFT is given to early adopters of Solid wallet",
+    desc: "This NFT is given to early adopters of NFT Nexus",
     image_url: image,
     price: 0.03
+  },
+  {
+    name: "Tic Tac",
+    image_url: "https://gametable.org/res/images/og/tabletop-tic-tac-toe-og-1200x1200.png",
+    desc: "Play-to-Earn mobile strategy game on NFT Nexus protocol",
+    price: 0.01
   }
 ];
 
@@ -26,6 +33,7 @@ const MarketPlaceTemp = ({ account, handleCloseMarketPlace }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [nftClicked, setNFTClicked] = useState('');
   const [priceClicked, setPriceClicked] = useState('');
+  const navigate = useNavigate();
 
   const [displayNoti, setDisplayNoti] = useState(false);
 
@@ -41,7 +49,7 @@ const MarketPlaceTemp = ({ account, handleCloseMarketPlace }) => {
   return (
     <AuthNavBar>
       {displayNoti &&
-        <Box bg="black" p="10px" pt="80px" textAlign="center" color="white" style={{ transition: "all 1.2s ease" }} pos="absolute" w="100%" mb="20px">
+        <Box bg="black" p="10px" pt="80px" textAlign="center" color="white" style={{ transition: "all 1.2s ease" }} pos="absolute" w="100%" mb="20px" top="0">
           <Text>Successful!</Text>
         </Box>
       }
@@ -62,10 +70,10 @@ const MarketPlaceTemp = ({ account, handleCloseMarketPlace }) => {
             hoverBg="none"
             hoverColor="black"
             testid="on-close"
-            onClick={handleCloseMarketPlace}
+            onClick={() => navigate('/my-nfts')}
             mt={{ base: "10px", lg: '0' }}
           >
-            Go to Wallet
+            View all collectibles
           </CustomButton>
         </Flex>
         <Divider my="30px" />

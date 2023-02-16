@@ -1,5 +1,5 @@
-import MarketPlaceTemp from "../templates/NFTS/MarketPlaceTemp";
+import HomeTemp from "../templates/HomeTemp";
 
-const MarketPlace = () => <MarketPlaceTemp />;
+const Home = () => <HomeTemp />;
 
-export default MarketPlace;
+export default Home;

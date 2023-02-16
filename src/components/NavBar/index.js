@@ -32,7 +32,7 @@ const NavBar = ({ children, noButton }) => (
           fontSize="12px"
           hoverColor="brand.white"
           testid="on-close"
-          href="/create-wallet"
+          href="/market-place"
           p={{ base: "8px 30px", lg: "8px 40px" }}
         >
           Get Started

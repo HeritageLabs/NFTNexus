@@ -31,7 +31,7 @@ const AuthNavBar = ({ children, setMainnet }) => {
                 width={{ base: "60%", lg: "100%" }}
               />
             </a>
-            <Flex cursor="pointer" onClick={() => navigate("/")}>
+            <Flex cursor="pointer" onClick={() => navigate("/market-place")}>
               <Box mr="5px">{walletIcon}</Box>
               <Text
                 display={{ base: "none", lg: "flex" }}
